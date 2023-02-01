@@ -1,6 +1,8 @@
 import { Router } from 'express'
 import { StatusCodes } from 'http-status-codes'
 
+import { CidadeController } from '../controllers'
+
 const router = Router()
 
 router.post('/', (_, res) => {
@@ -10,8 +12,6 @@ router.post('/', (_, res) => {
   }`)
 })
 
-router.post('/teste', (req, res) => {
-  return res.status(StatusCodes.ACCEPTED).json(req.body)
-})
+router.post('/cidades', CidadeController.create)
 
 export { router }
